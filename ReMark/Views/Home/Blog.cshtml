@@ -1,0 +1,55 @@
+﻿@model ReMark.Models.NewBlog
+
+@{
+    ViewBag.Title = "Blog";
+}
+
+<h2>Blog</h2>
+
+<p>
+</p><div style="margin:3%;border-radius:5px;text-align:center">
+
+
+    <table class="table">
+
+
+            <tr>
+                <div class="row">
+
+                    <div class="col-xs-8" style="background-color:#d6d6c2;width:100%;height:100%;font-size:1.3em">
+                        <label style="color:#404d5b">
+                            @Html.DisplayFor(modelItem => modelItem.Blog_Title)
+                        </label>
+                        <br />
+                        <br />
+                        @Html.Raw(HttpUtility.HtmlDecode(Model.Subject))
+                        <br />
+                        <label>
+
+                            Powered By : @Html.DisplayFor(modelItem => modelItem.Username)
+                        </label>
+                        <br />
+
+                        <label>
+
+                            Deprtment : @Html.DisplayFor(modelItem => modelItem.Department)
+                        </label>
+                        <br />
+
+                        <label>
+
+                            Date : @Html.DisplayFor(modelItem => modelItem.date)
+                        </label>
+                        <br />
+
+ 
+                        <hr />
+                    </div>
+                </div>
+            </tr>
+
+
+   
+
+    </table>
+

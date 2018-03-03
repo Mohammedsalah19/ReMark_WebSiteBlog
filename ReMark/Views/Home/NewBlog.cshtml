@@ -1,0 +1,79 @@
+﻿@model ReMark.Models.NewBlog
+
+@{
+    ViewBag.Title = "NewBlog";
+}
+
+<h2>NewBlog</h2>
+
+
+@using (Html.BeginForm("NewBlog","Home")) 
+{
+    @Html.AntiForgeryToken()
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+            <meta charset="utf-8">
+        <script src="~/ckeditor/ckeditor.js"></script>
+        <script src="~/ckeditor/samples/js/sample.js"></script>
+        <link rel="stylesheet" href="~/ckeditor/samples/css/samples.css">
+        <link rel="stylesheet" href="~/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+    </head>
+    <body id="main" style="font-size:1.3em">
+
+            <main>
+
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" id="input_Blogtitle" name="input_Blogtitle" />
+
+                    <label class="input__label input__label--nao" for="input_Blogtitle">
+                        <span class="input__label-content input__label-content--nao">Blog Title  </span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
+                    </svg>
+                </span>
+                <div class="adjoined-bottom">
+                    <div class="grid-container">
+                        <div class="grid-width-100">
+                            <textarea type="text" id="editor" name="editor">
+
+       
+                        </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    //  CKEDITOR.replace("editor");
+                    initSample();
+                    this.setMode('source');
+
+                </script>
+
+
+            </main>
+
+            <span class="input input--nao">
+                <button type="submit" value="SignUp" class="btn btn-form">NewBlog</button>
+            </span>
+
+
+</body>
+</html>
+
+}
+
+<div>
+    @Html.ActionLink("Home", "Index")
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="~/LoginStyle/normalize.css" />
+<link rel="stylesheet" type="text/css" href="~/LoginStyle/font-awesome-4.2.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="~/LoginStyle/demo.css" />
+<link rel="stylesheet" type="text/css" href="~/LoginStyle/set2.css" />
+

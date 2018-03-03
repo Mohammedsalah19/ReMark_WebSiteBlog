@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ReMark.Models.NewBlog>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+</p><div style="margin:3%;border-radius:5px;text-align:center">
+
+
+    <table class="table">
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <div class="row">
+
+                    <div class="col-xs-8" style="background-color:#d6d6c2;width:100%;height:100%;font-size:1.3em">
+                        <label style="color:#404d5b">
+                            @Html.DisplayFor(modelItem => item.Blog_Title)
+                        </label>
+                        <br />
+                        <br />
+                        @Html.Raw(HttpUtility.HtmlDecode(item.Subject))
+                        <br />
+                        <br />
+
+                        <label>
+
+                            Powered By : @Html.DisplayFor(modelItem => item.Username)
+                        </label>
+                        <br />
+
+                        <label>
+
+                            Deprtment : @Html.DisplayFor(modelItem => item.Department)
+                        </label>
+                        <br />
+
+                        <label>
+
+                            Date : @Html.DisplayFor(modelItem => item.date)
+                        </label>
+
+                        <div style="display:block;">
+
+                            @{
+                                if (item.State == true)
+                                {
+                                    @Html.ActionLink("  Disappear  ", "Statue", new { id = item.id }) ;
+                                    @Html.ActionLink("  Delete  ", "Delete", new { id = item.id })
+
+
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("  Show  ", "Statue", new { id = item.id }) ;
+                                    @Html.ActionLink("  Delete  ", "Delete", new { id = item.id })
+
+                                }
+                            }
+                        </div>
+                        <hr />
+                    </div>
+
+                </div>
+            </tr>
+      }
